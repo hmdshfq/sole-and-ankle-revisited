@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { WEIGHTS } from '../../constants';
+import { QUERIES, WEIGHTS } from '../../constants';
 
 import Breadcrumbs from '../Breadcrumbs';
 import Select from '../Select';
@@ -51,6 +51,10 @@ const Wrapper = styled.div`
 
 const LeftColumn = styled.div`
   flex-basis: 248px;
+  @media ${QUERIES.tabletAndSmaller}{
+    position: absolute;
+    left: 33px;
+  }
 `;
 
 const MainColumn = styled.div`
@@ -66,6 +70,12 @@ const Header = styled.header`
 const Title = styled.h2`
   font-size: 1.5rem;
   font-weight: ${WEIGHTS.medium};
+  @media ${QUERIES.tabletAndSmaller}{
+    align-self: flex-end;
+  }
+  @media ${QUERIES.phoneAndSmaller}{
+    padding-top: 16px;
+  }
 `;
 
 export default ShoeIndex;
